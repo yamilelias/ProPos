@@ -9,6 +9,24 @@ public class Controller {
     Slaves slaves = new Slaves();
 
 
+    //Routes
+    /*
+    GETs
+    -----------------------------------------
+    /person/all --> all persons
+    /person/[id] --> person with entered id
+    /person/profile/[id] --> profile of the person with entered id
+    /active --> get the id of the active person
+    /test
+
+    POST
+    ------------------------------------------
+    /person/[id]/[name]/[lastName] --> create or edit name and lastName of person with id
+    /person/profile/[id]/[foco1]/[foco2] --> create or edit the proile of person with id
+    /active/id --> post the id of the person that is active
+     */
+
+
     //GET to see all the person resources
     @Produces(MediaType.APPLICATION_JSON)
     @GET
