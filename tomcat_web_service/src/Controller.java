@@ -9,6 +9,7 @@ public class Controller {
     Slaves slaves = new Slaves();
 
 
+
     //Routes
     /*
     GETs
@@ -106,7 +107,7 @@ public class Controller {
             boolean f2 = (foco2 > 0);
             Profile profile = new Profile();
             profile.setFoco1(f1);
-            profile.setFooc2(f2);
+            profile.setFoco2(f2);
 
             //assign the profile to the person with the correspondent id
             PersonResources.personHashMap.get(id).setProfile(profile);
@@ -124,7 +125,12 @@ public class Controller {
         try {
             if (PersonResources.personHashMap.containsKey(id)){
                 PersonResources.actvePersonId = id;
-                slaves.doStuff();
+
+                //new lines
+                slaves.setup();
+
+                //activate the profile (light bulbs on/off) of the person that was detected
+                slaves.activateProfile(id);
                 return Response.status(201).build();
             }
             else return Response.status(409).build();

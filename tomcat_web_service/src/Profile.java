@@ -3,7 +3,7 @@
  */
 public class Profile {
     public boolean foco1;
-    public boolean fooc2;
+    public boolean foco2;
 
     public boolean isFoco1() {
         return foco1;
@@ -13,19 +13,19 @@ public class Profile {
         this.foco1 = foco1;
     }
 
-    public boolean isFooc2() {
-        return fooc2;
+    public boolean isFoco2() {
+        return foco2;
     }
 
-    public void setFooc2(boolean fooc2) {
-        this.fooc2 = fooc2;
+    public void setFoco2(boolean foco2) {
+        this.foco2 = foco2;
     }
 
     @Override
     public String toString() {
         return "Profile{" +
                 "foco1=" + foco1 +
-                ", fooc2=" + fooc2 +
+                ", foco2=" + foco2 +
                 '}';
     }
 }
