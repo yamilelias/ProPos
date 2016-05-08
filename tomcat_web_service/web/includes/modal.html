@@ -1,3 +1,6 @@
+<!-- jQuery -->
+<script src="assets/js/jquery.js"></script>
+
 <!-- Modal to Add Profile -->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -47,23 +50,24 @@
                             </div>
                         </div><!-- /.row -->
                         <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="uploadFile">Upload photo:</label>
-                                    <input id="uploadFile" type="file" name="image" class="img">
+                            <form id="form1" runat="server">
+                                <div class="col-sm-6">
+                                    <label for="imgInp">Upload photo:</label>
+                                    <input type='file' id="imgInp" />
                                     <p class="help-block">In the photo it must appear your face</p>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div id="imagePreview"><img id="imgPreview" src="http://placehold.it/180x180" alt="Your Image" width="180px" height="180px"/> </div> <!-- This is where the preview image is shown -->
-                            </div>
+                                <div class="col-sm-6 text-center">
+                                    <img id="blah" src="http://placehold.it/180x180" alt="your image" width="180px" height="180px"/> <br><!-- This is where the preview image is shown -->
+                                    <strong>Prefered size image</strong>
+                                </div>
+                            </form>
                         </div><!-- /.row -->
                     </div><!-- /.container -->
                     <br/>
                 </form>
             </div> <!-- /.modal dialog -->
             <div class="modal-footer">
-                <a href="profiles.html"><button type="button" onclick="addPerson(); successAlert(); getAllPeople();" data-target="profiles.html" class="btn btn-default btn-primary" data-dismiss="modal">Save</button></a><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a href="profiles.html"><button type="button" onclick="addModal();" data-target="profiles.html" class="btn btn-default btn-primary" data-dismiss="modal">Save</button></a>  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

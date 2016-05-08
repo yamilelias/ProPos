@@ -26,12 +26,18 @@
     <!-- jQuery -->
     <script src="assets/js/jquery.js"></script>
 
-    <!-- Include files -->
+    <!-- Script needed -->
     <script>
+        // Include files
         $(function () {
             $("#modal").load("includes/modal.html");
             $("#nav").load("includes/navbar.html");
             $("#footer").load("includes/footer.html");
+        });
+
+        // Get the settings to display on the table when page opens
+        $("#peopleTable").change(function(){
+            getAllPeopleSettings();
         });
     </script>
 
@@ -72,7 +78,7 @@
 
         <div class="row">
             <form class="text-right">
-                <input id="listButton" type="button" value="List people" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
+                <input id="listButton" type="button" value="List Profiles" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
                 <div id= "table" class="padding-borders">
                 </div>
             </form>
@@ -85,6 +91,11 @@
                 <thead>
                 <tr><th>ID</th><th>Name</th><th>Last Name</th></tr>
                 </thead>
+                <tr>
+                    <th>0</th>
+                    <th>Yamil</th>
+                    <th>Elias</th>
+                </tr>
                 <div id="peopleTable"></div>
             </table>
         </div>
@@ -100,13 +111,6 @@
 
 <!-- Modal to Add Profile -->
 <div id="modal"></div>
-
-
-<!-- Pop up Alerts
-<div id="alert" class="alert alert-warning alert-dismissible fade in" role=alert>
-    <button type=button class=close data-dismiss=alert aria-label=Close>
-        <span aria-hidden=true>&times;</span></button> <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
-</div>-->
 
 <!-- Custom Javascript -->
 <script src="assets/js/webService.js"></script>

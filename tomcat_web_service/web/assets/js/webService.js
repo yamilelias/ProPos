@@ -13,24 +13,49 @@ function addPerson() {
 }
 
 // Add a new configuration to certain person
-function addPerson() {
+function addPersonSettings() {
     $.post( "/person/" + $("#id").val() + "/" + $("#foco1").val() + "/" + $("#foco2").val(), function() {
     });
+}
+
+// This function is used by the modal to save all data and display a success alert
+function addModal(){
+    addPerson(); // Add Person data
+    addPersonSettings(); // Add Person Profile
+    successAlert(); // Display success Alert
 }
 
 // Function to get all People
 function getAllPeople(){
     $.getJSON("/person/all", function(data){
-        var htmlTable = '<table class="table table-bordered"><thead><tr><th>ID</th><th>Name</th><th>Last Name</th></tr>';
-        $.each(data.personHashMap, function(i,obj){
-            var id = obj.id;
-            var name = obj.name;
-            var lastName = obj.lastName;
-            var objecthtml = '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td></tr>';
-            htmlTable+=objecthtml;
+        var htmlTable = ''; // Aux Variable
+        $.each(data.personHashMap, function(i,obj){ // For each element in the Hash Map
+            var id = obj.id; // Get the ID
+            var name = obj.name; // Get the Name
+            var lastName = obj.lastName; // Get the last Name
+
+            // Put everything in the aux variable
+            htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td></tr>';
         });
 
-        $("#peopleTable").html(htmlTable+'</thead></table>');
+        $("#peopleTable").html(htmlTable); // Print it on the table
+    });
+}
+function getAllPeopleSettings(){
+    $.getJSON("/person/all", function(data){
+        var htmlTable = ''; // Aux Variable
+        $.each(data.personHashMap, function(i,obj){ // For each element in the Hash Map
+            var id = obj.id; // Get the ID
+            var name = obj.name; // Get the Name
+            var lastName = obj.lastName; // Get the last Name
+            var foco1 = obj.foco1 ? 'checked' : ''; // If foco1 is active then check the checkbox
+            var foco2 = obj.foco2 ? 'checked' : ''; // If foco2 is active then check the checkbox
+
+            // Put everything in the aux variable
+            htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td>< type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td></tr>';
+        });
+
+        $("#peopleTable").html(htmlTable); // Print it on the table
     });
 }
 
@@ -48,13 +73,6 @@ function getPeopleProfile(){
     });
 }
 
-// Get active person ID
-function getActiveID(){
-    $.getJSON("/active/", function(data){
-
-    });
-}
-
 /**
  * OTHER FUNCTIONS
  */
@@ -66,35 +84,19 @@ function successAlert(){
 }
 
 // Function to display a preview of a photo
-$(function() {
-    $("#uploadFile").on("change", function()
-    {
-        var files = !!this.files ? this.files : [];
-        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-
-        if (/^image/.test( files[0].type)){ // only image file
-            var reader = new FileReader(); // instance of the FileReader
-            reader.readAsDataURL(files[0]); // read the local file
-
-            reader.onload = function(){ // set image data as background of div
-                $("#imagePreview").css("background-image", "url("+this.result+")");
-            }
-        }
-    });
-});
-
 function readURL(input) {
-    if (input.files && input.files[0]) {
+    if (input.files && input.files[0]) { // If we have an input file
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#imgPreview').attr('src', e.target.result);
+            $('#imgPreview').attr('src', e.target.result); // Change the source of the image so it will display the uploaded
         }
 
         reader.readAsDataURL(input.files[0]);
     }
 }
 
+// Function that will call readURL to display image
 $("#uploadFile").change(function() {
     readURL(this);
 });

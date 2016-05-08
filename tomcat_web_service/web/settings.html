@@ -26,12 +26,19 @@
     <!-- jQuery -->
     <script src="assets/js/jquery.js"></script>
 
-    <!-- Include files -->
+    <!-- Script needed -->
     <script>
+
+        // Include Files
         $(function () {
             $("#modal").load("includes/modal.html");
             $("#nav").load("includes/navbar.html");
             $("#footer").load("includes/footer.html");
+        });
+
+        // Get the settings to display on the table when page opens
+        $("#peopleTable").change(function(){
+            getAllPeopleSettings();
         });
     </script>
 
@@ -72,7 +79,7 @@
 
         <div class="row">
             <form class="text-right">
-                <input id="listButton" type="button" value="List people" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
+                <input id="listButton" type="button" value="Show Settings" onclick="getAllPeopleSettings();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
                 <div id= "table" class="padding-borders">
                 </div>
             </form>
@@ -81,10 +88,17 @@
         <!-- /.row -->
 
         <div class="row">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-responsive">
                 <thead>
                 <tr><th>ID</th><th>Name</th><th>Last Name</th><th>Foco 1</th><th>Foco 2</th></tr>
                 </thead>
+                <tr>
+                    <th>0</th>
+                    <th>Yamil</th>
+                    <th>Elias</th>
+                    <th><input type="checkbox" disabled checked></th>
+                    <th><input type="checkbox" disabled ></th>
+                </tr>
                 <div id="peopleTable"></div>
             </table>
         </div>
@@ -100,13 +114,6 @@
 
 <!-- Modal to Add Profile -->
 <div id="modal"></div>
-
-
-<!-- Pop up Alerts
-<div id="alert" class="alert alert-warning alert-dismissible fade in" role=alert>
-    <button type=button class=close data-dismiss=alert aria-label=Close>
-        <span aria-hidden=true>&times;</span></button> <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
-</div>-->
 
 <!-- Custom Javascript -->
 <script src="assets/js/webService.js"></script>

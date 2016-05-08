@@ -248,3 +248,7 @@ ul.alert-dropdown {
 .paint-green{
     color: #47AC47;
 }
+
+th{
+    font-weight: default;
+}
