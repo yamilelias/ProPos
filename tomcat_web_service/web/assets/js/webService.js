@@ -8,21 +8,46 @@
 
 // Add a Person to the profiles list
 function addPerson() {
+    //Try to post data
     $.post( "/person/" + $("#id").val() + "/" + $("#name").val() + "/" + $("#lastName").val(), function() {
-    });
+    })
+        .done(function(){ // This will spawn a success Message
+            return 0; // Return 0 saying there were no errors
+        })
+        .fail(function(){ // This will spawn an error if there was any
+            return 1; // Return 1 saying there were errors
+        });
 }
 
 // Add a new configuration to certain person
 function addPersonSettings() {
+    //Try to post data
     $.post( "/person/" + $("#id").val() + "/" + $("#foco1").val() + "/" + $("#foco2").val(), function() {
-    });
+    })
+        .done(function(){ // This will spawn a success Message
+            return 0; // Return 0 saying there were no errors
+        })
+        .fail(function(){ // This will spawn an error if there was any
+            return 1; // Return 1 saying there were errors
+        });
 }
 
 // This function is used by the modal to save all data and display a success alert
 function addModal(){
-    addPerson(); // Add Person data
-    addPersonSettings(); // Add Person Profile
-    successAlert(); // Display success Alert
+    try{
+        var profile = addPerson(); // Add Person data
+        var settings = addPersonSettings(); // Add Person Profile
+
+        if(profile!=0|| settings!=0){
+            throw "There was an error creating profile. Try again later.";
+        }
+        else{
+            successAlert(); // Success Alert
+        }
+    }
+    catch(err){
+        postErrorAlert(); // If we had an error uploading the new Profile
+    }
 }
 
 // Function to get all People
@@ -47,7 +72,10 @@ function getAllPeople(){
             // Put everything in the aux variable
             htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td></tr>';
         });
-    });
+    })
+        .fail(function(){
+            getErrorAlert();
+        });
 
     $('#profilesResult').html(htmlTable); // Print it on the table
 }
@@ -105,6 +133,18 @@ function getPeopleProfile(){
 // Function to display a Success Alert
 function successAlert(){
     var alertMessage = '<div id="successAlert" class="alert alert-success alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Congratulations!</strong> You have saved a new profile. </div>';
+    $("#alert").html('' + alertMessage + '');
+}
+
+// Function to display an Error Alert in POST
+function postErrorAlert(){
+    var alertMessage = '<div id="errorAlert" class="alert alert-danger alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Oh oh!</strong> There was an error saving your profile, try again later.</div>';
+    $("#alert").html('' + alertMessage + '');
+}
+
+// Function to display an Error Alert in GET
+function getErrorAlert(){
+    var alertMessage = '<div id="errorAlert" class="alert alert-danger alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Oh oh!</strong> There was an error getting the information from server, try again later.</div>';
     $("#alert").html('' + alertMessage + '');
 }
 
