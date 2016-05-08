@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Graphic Interface for the control of the project ProPos">
+    <meta name="author" content="Yamil Elias">
+
+    <title>ProPos Admin - Profiles</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="assets/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- Include files -->
+    <script>
+        $(function () {
+            $("#modal").load("includes/modal.html");
+            $("#nav").load("includes/navbar.html");
+            $("#footer").load("includes/footer.html");
+        });
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- Innitial JS code for profile-->
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav id="nav"></nav>
+
+<!-- Entire body -->
+<div id="page-wrapper">
+
+    <!-- Content -->
+    <div class="container">
+
+        <!-- Pop up Alerts -->
+        <div id="alert"></div>
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    View Profiles <small> Info and Settings</small> <!-- Here we will get the name of the Active Profile-->
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <form class="text-right">
+                <input id="listButton" type="button" value="List people" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
+                <div id= "table" class="padding-borders">
+                </div>
+            </form>
+            <br>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                <tr><th>ID</th><th>Name</th><th>Last Name</th></tr>
+                </thead>
+                <div id="peopleTable"></div>
+            </table>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+</div>
+<!-- /#page-wrapper -->
+
+<!-- Modal to Add Profile -->
+<div id="modal"></div>
+
+
+<!-- Pop up Alerts
+<div id="alert" class="alert alert-warning alert-dismissible fade in" role=alert>
+    <button type=button class=close data-dismiss=alert aria-label=Close>
+        <span aria-hidden=true>&times;</span></button> <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+</div>-->
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="assets/js/plugins/morris/raphael.min.js"></script>
+<script src="assets/js/plugins/morris/morris.min.js"></script>
+<script src="assets/js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>
