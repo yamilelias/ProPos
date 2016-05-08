@@ -19,28 +19,37 @@ function addPerson() {
 }
 
 // Function to get all People
-function getAllPeople{
-    $.getJSON("/person/", function(data){
+function getAllPeople(){
+    $.getJSON("/person/all", function(data){
+        var htmlTable = '<table class="table table-bordered"><thead><tr><th>ID</th><th>Name</th><th>Last Name</th></tr>';
+        $.each(data.person, function(i,obj){
+            var id = obj.id;
+            var name = obj.name;
+            var lastName = obj.lastName;
+            var objecthtml = '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td></tr>';
+            htmlTable+=objecthtml;
+        });
 
+        $("#peopleTable").html(htmlTable+'</thead></table>');
     });
 }
 
 // Get people depending on their ID
-function getPeopleByID{
+function getPeopleByID(){
     $.getJSON("/person/" + $("id").val() + "/", function(data){
 
     });
 }
 
 // Get people profile depending on their ID
-function getPeopleProfile{
+function getPeopleProfile(){
     $.getJSON("/person/profile/" + $("id").val()  + "/", function(data){
 
     });
 }
 
 // Get active person ID
-function getActiveID{
+function getActiveID(){
     $.getJSON("/active/", function(data){
 
     });

@@ -9,7 +9,7 @@
     <meta name="description" content="Graphic Interface for the control of the project ProPos">
     <meta name="author" content="Yamil Elias">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>ProPos Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -44,13 +44,13 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="profile.html"><i class="fa fa-fw fa-user"></i> View Profile</a>
+                    <a href="profile.html"><i class="fa fa-fw fa-user"></i> View Profiles</a>
                 </li>
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> Edit Profile</a>
+                    <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-edit"></i> Add Profile</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -84,15 +84,15 @@
         </div>
         <!-- /.row -->
 
-        <div class="row center-block">
-            <div class="col-lg-3 col-md-6">
+        <div class="row">
+            <div class="">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-lightbulb-o fa-5x"></i>
                             </div>
-                            <div class="col-xs-9 text-right">
+                            <div class="col-xs-8 text-center btn-lg text-uppercase">
                                 <div class="fa fa-5x"> </div>
                                 <div>Set up lights</div>
                             </div>
@@ -111,16 +111,12 @@
         <!-- /.row -->
 
         <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div id="morris-area-chart"></div>
-                    </div>
+            <form class="text-center">
+                <input id="listButton" type="button" value="List people" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
+                <div id= "table" class="padding-borders">
+                    <div id="peopleTable"></div>
                 </div>
-            </div>
+            </form>
         </div>
         <!-- /.row -->
 
@@ -151,14 +147,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Forma de Registro</h4>
+                <h4 class="modal-title">New Profile</h4>
             </div>
             <div class="modal-body">
                 <form class="center-text">
                     <table>
-                        <tr><th><label>ID:</label></th><th><input type="text" name="id" id="id"/><a href="#" data-toggle="popover" title="ID" data-content="Inserta el ID"></a></th></tr>
-                        <tr><th><label>Nombre:</label></th><th><input type="text" name="name" id="name"/><a href="#" data-toggle="popover" title="Nombre" data-content="Inserta tu nombre"></a></th></tr>
-                        <tr><th><label>Apellido:</label></th><th><input type="text" name="lastName" id="lastName"/><a href="#" data-toggle="popover" title="Apellido" data-content="Inserta tu apellido"></a></th></tr>
+                        <tr><th><label>ID:</label></th><th><input type="text" name="id" id="id"/><a href="#" data-toggle="popover" title="ID" data-content="Insert ID"></a></th></tr>
+                        <tr><th><label>Name:</label></th><th><input type="text" name="name" id="name"/><a href="#" data-toggle="popover" title="Nombre" data-content="Write your Name"></a></th></tr>
+                        <tr><th><label>Last Name:</label></th><th><input type="text" name="lastName" id="lastName"/><a href="#" data-toggle="popover" title="Apellido" data-content="Input your last name"></a></th></tr>
                         <tr><th>
                             <div class="checkbox">
                                 <label> <input type="checkbox" name="foco1" id="foco1"> Foco 1</label>
@@ -167,9 +163,9 @@
                         </th></tr>
                         <tr><th>
                             <div class="form-group">
-                                <label for="exampleInputFile">Subir foto:</label>
+                                <label for="exampleInputFile">Upload photo:</label>
                                 <input type="file" id="exampleInputFile">
-                                <p class="help-block">Procura que tu rostro se encuentre lo mas visible posible</p>
+                                <p class="help-block">In the photo it must appear your face</p>
                             </div>
                         </th></tr>
                     </table>
@@ -177,7 +173,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="profile.html"><button type="button" onclick="addPerson(); successAlert();" data-target="alert" class="btn btn-default btn-primary" data-dismiss="modal">Guardar</button><button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button></a>
+                <a href="profile.html"><button type="button" onclick="addPerson(); successAlert(); getAllPeople();" data-target="alert" class="btn btn-default btn-primary" data-dismiss="modal">Save</button><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></a>
             </div>
         </div>
     </div>
