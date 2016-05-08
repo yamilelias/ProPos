@@ -86,7 +86,8 @@
 
         <div class="row">
             <div class="">
-                <div class="panel panel-primary">
+                <a href="#">
+                    <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -98,14 +99,14 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+
                         <div class="panel-footer">
                             <span class="pull-left">Settings</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
         <!-- /.row -->
@@ -150,34 +151,65 @@
                 <h4 class="modal-title">New Profile</h4>
             </div>
             <div class="modal-body">
-                <form class="center-text">
-                    <table>
-                        <tr><th><label>ID:</label></th><th><input type="text" name="id" id="id"/><a href="#" data-toggle="popover" title="ID" data-content="Insert ID"></a></th></tr>
-                        <tr><th><label>Name:</label></th><th><input type="text" name="name" id="name"/><a href="#" data-toggle="popover" title="Nombre" data-content="Write your Name"></a></th></tr>
-                        <tr><th><label>Last Name:</label></th><th><input type="text" name="lastName" id="lastName"/><a href="#" data-toggle="popover" title="Apellido" data-content="Input your last name"></a></th></tr>
-                        <tr><th>
-                            <div class="checkbox">
-                                <label> <input type="checkbox" name="foco1" id="foco1"> Foco 1</label>
-                                <label> <input type="checkbox" name="foco2" id="foco2"> Foco 2</label>
+                <form runat="server">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>ID:</label>
                             </div>
-                        </th></tr>
-                        <tr><th>
-                            <div class="form-group">
-                                <label for="exampleInputFile">Upload photo:</label>
-                                <input type="file" id="exampleInputFile">
-                                <p class="help-block">In the photo it must appear your face</p>
+                            <div class="col-sm-8">
+                                <input type="text" name="id" id="id"/>
                             </div>
-                        </th></tr>
-                    </table>
+                        </div><!-- /.row -->
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Name:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="name" id="name"/>
+                            </div>
+                        </div><!-- /.row -->
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Last Name:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="lastName" id="lastName"/>
+                            </div>
+                        </div><!-- /.row -->
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label>Settings:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="checkbox">
+                                    <label> <input type="checkbox" name="foco1" id="foco1"> Foco 1</label>
+                                    <label> <input type="checkbox" name="foco2" id="foco2"> Foco 2</label>
+                                </div>
+                            </div>
+                        </div><!-- /.row -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="uploadFile">Upload photo:</label>
+                                    <input id="uploadFile" type="file" name="image" class="img">
+                                    <p class="help-block">In the photo it must appear your face</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="imagePreview"><img id="imgPreview" src="http://placehold.it/180x180" alt="Your Image" width="180px" height="180px"/> </div> <!-- This is where the preview image is shown -->
+                            </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
                     <br/>
                 </form>
-            </div>
+            </div> <!-- /.modal dialog -->
             <div class="modal-footer">
                 <a href="profile.html"><button type="button" onclick="addPerson(); successAlert(); getAllPeople();" data-target="alert" class="btn btn-default btn-primary" data-dismiss="modal">Save</button><button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></a>
             </div>
         </div>
     </div>
-</div>
+</div> <!-- /.modal -->
 
 <!-- Pop up Alerts
 <div id="alert" class="alert alert-warning alert-dismissible fade in" role=alert>

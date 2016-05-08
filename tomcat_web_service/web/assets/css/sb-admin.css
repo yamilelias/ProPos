@@ -232,7 +232,15 @@ ul.alert-dropdown {
 /* Footer */
 #footer{
     background-color: #fff;
-    border: #f0ad4e;
-    border-radius: 1px;
-    border-width: 1px;
+}
+
+/* Other Styles */
+
+#imagePreview {
+    width: 180px;
+    height: 180px;
+    background-position: center center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    display: inline-block;
 }

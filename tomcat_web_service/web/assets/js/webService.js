@@ -22,7 +22,7 @@ function addPerson() {
 function getAllPeople(){
     $.getJSON("/person/all", function(data){
         var htmlTable = '<table class="table table-bordered"><thead><tr><th>ID</th><th>Name</th><th>Last Name</th></tr>';
-        $.each(data.person, function(i,obj){
+        $.each(data.personHashMap, function(i,obj){
             var id = obj.id;
             var name = obj.name;
             var lastName = obj.lastName;
@@ -65,6 +65,36 @@ function successAlert(){
     $("#alert").html(alertMessage + '');
 }
 
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
+// Function to display a preview of a photo
+$(function() {
+    $("#uploadFile").on("change", function()
+    {
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+
+            reader.onload = function(){ // set image data as background of div
+                $("#imagePreview").css("background-image", "url("+this.result+")");
+            }
+        }
+    });
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgPreview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#uploadFile").change(function() {
+    readURL(this);
 });

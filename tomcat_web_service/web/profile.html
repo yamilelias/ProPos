@@ -77,42 +77,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome <small><div id="nameAndLastName"></div></small> <!-- Here we will get the name of the Active Profile-->
+                    View Profiles <small> Info and Settings</small> <!-- Here we will get the name of the Active Profile-->
                 </h1>
             </div>
         </div>
         <!-- /.row -->
 
         <div class="row">
-            <div class="col-sm-8">
-                <!-- Profile Form -->
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Nombre</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Check me out
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
-            <div class="col-sm-4">
-                    <div class="text-center"><img src="http://placehold.it/150x200"/></div>
-                    <div class="text-center"><p><strong>Foto de Perfil</strong></p></div>
-            </div>
+            <form class="text-center">
+                <input id="listButton" type="button" value="List people" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
+                <div id= "table" class="padding-borders">
+                    <div id="peopleTable"></div>
+                </div>
+            </form>
         </div>
+        <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
 
