@@ -61,8 +61,8 @@ function getActiveID(){
 
 // Function to display a Success Alert
 function successAlert(){
-    var alertMessage = '<div id="successAlert" class="alert alert-warning alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Holy guacamole!</strong> Best check yo self, youre not looking too good. </div>';
-    $("#alert").html(alertMessage + '');
+    var alertMessage = '<div id="successAlert" class="alert alert-success alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Congratulations!</strong> You have saved a new profile. </div>';
+    $("#alert").html('' + alertMessage + '');
 }
 
 // Function to display a preview of a photo

@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32a774d9-c9c6-4ce5-afe7-6d9da864b5df" name="Default" comment="Change to GUI">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js" afterPath="$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html" afterPath="$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat_web_service/web/includes/navbar.html" afterPath="$PROJECT_DIR$/tomcat_web_service/web/includes/navbar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat_web_service/web/index.html" afterPath="$PROJECT_DIR$/tomcat_web_service/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat_web_service/web/profiles.html" afterPath="$PROJECT_DIR$/tomcat_web_service/web/profiles.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat_web_service/web/settings.html" afterPath="$PROJECT_DIR$/tomcat_web_service/web/settings.html" />
     </list>
     <ignored path="ProPos.iws" />
@@ -29,28 +33,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+            <state vertical-scroll-proportion="-9.615385">
+              <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="144" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profiles.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profiles.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/profiles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.76923">
-              <caret line="121" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.48135594">
+              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/settings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5966102">
-              <caret line="85" column="86" selection-start-line="85" selection-start-column="86" selection-end-line="85" selection-end-column="86" />
+            <state vertical-scroll-proportion="-51.46154">
+              <caret line="111" column="47" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.153847">
+              <caret line="65" column="115" selection-start-line="65" selection-start-column="115" selection-end-line="65" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -60,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="119" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="119" />
+              <caret line="63" column="291" selection-start-line="63" selection-start-column="291" selection-end-line="63" selection-end-column="291" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -100,15 +114,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tomcat_web_service/web/assets/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js" />
         <option value="$PROJECT_DIR$/tomcat_web_service/web/profile.html" />
         <option value="$PROJECT_DIR$/tomcat_web_service/web/assets/css/sb-admin.css" />
-        <option value="$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html" />
         <option value="$PROJECT_DIR$/tomcat_web_service/web/includes/footer.html" />
-        <option value="$PROJECT_DIR$/tomcat_web_service/web/profiles.html" />
         <option value="$PROJECT_DIR$/tomcat_web_service/web/includes/navbar.html" />
+        <option value="$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html" />
         <option value="$PROJECT_DIR$/tomcat_web_service/web/index.html" />
+        <option value="$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js" />
         <option value="$PROJECT_DIR$/tomcat_web_service/web/settings.html" />
+        <option value="$PROJECT_DIR$/tomcat_web_service/web/profiles.html" />
       </list>
     </option>
   </component>
@@ -688,7 +702,7 @@
       <created>1462649411482</created>
       <option name="number" value="Default" />
       <updated>1462649411482</updated>
-      <workItem from="1462649413886" duration="15992000" />
+      <workItem from="1462649413886" duration="17174000" />
     </task>
     <task id="LOCAL-00001" summary="Wen interface innitial commit">
       <created>1462649745021</created>
@@ -712,7 +726,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15992000" />
+    <option name="totallyTimeSpent" value="17174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -770,28 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="119" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="119" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/assets/css/sb-admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.0">
           <caret line="227" column="25" selection-start-line="227" selection-start-column="25" selection-end-line="227" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -804,34 +800,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/profiles.html">
+    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/includes/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.76923">
-          <caret line="121" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.54745764">
+          <caret line="19" column="73" selection-start-line="19" selection-start-column="73" selection-end-line="19" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/includes/navbar.html">
+    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/includes/modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46101695">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state vertical-scroll-proportion="-16.153847">
+          <caret line="65" column="115" selection-start-line="65" selection-start-column="115" selection-end-line="65" selection-end-column="115" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/assets/js/webService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="291" selection-start-line="63" selection-start-column="291" selection-end-line="63" selection-end-column="291" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+        <state vertical-scroll-proportion="-9.615385">
+          <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="144" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5966102">
-          <caret line="85" column="86" selection-start-line="85" selection-start-column="86" selection-end-line="85" selection-end-column="86" />
+        <state vertical-scroll-proportion="-51.46154">
+          <caret line="111" column="47" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat_web_service/web/profiles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48135594">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
           <folding />
         </state>
       </provider>
