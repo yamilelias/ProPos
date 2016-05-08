@@ -27,8 +27,18 @@ function addModal(){
 
 // Function to get all People
 function getAllPeople(){
+    var htmlTable = ''; // Aux Variable
+
+    // Demo variables - Delete if not needed any more
+    var demo_id = 0;
+    var demo_name = 'Bob';
+    var demo_lastName = 'Torres';
+
+    // Put demo in Aux Variable
+    htmlTable+= '<tr><td>'+demo_id+'</td>'+'<td>'+demo_name+'</td>'+'<td>'+demo_lastName+'</td></tr>';
+
     $.getJSON("/person/all", function(data){
-        var htmlTable = ''; // Aux Variable
+
         $.each(data.personHashMap, function(i,obj){ // For each element in the Hash Map
             var id = obj.id; // Get the ID
             var name = obj.name; // Get the Name
@@ -37,13 +47,28 @@ function getAllPeople(){
             // Put everything in the aux variable
             htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td></tr>';
         });
-
-        $("#peopleTable").html(htmlTable); // Print it on the table
     });
+
+    $('#profilesResult').html(htmlTable); // Print it on the table
 }
 function getAllPeopleSettings(){
+    var htmlTable = ''; // Aux Variable
+
+    // Demo variables - Delete if not needed any more
+    var demo_id = 0;
+    var demo_name = 'Bob';
+    var demo_lastName = 'Torres';
+    var bool_foco1 = true;
+    var bool_foco2 = false;
+
+    // Check for bool_foco1 and bool_foco2
+    var demo_foco1 = bool_foco1 ? 'checked' : '';
+    var demo_foco2 = bool_foco2 ? 'checked' : '';
+
+    // Put demo in Aux Variable
+    htmlTable+= '<tr><td>'+demo_id+'</td>'+'<td>'+demo_name+'</td>'+'<td>'+demo_lastName+'</td>'+'<td><input type="checkbox" disabled '+demo_foco1+'></td>'+'<td><input type="checkbox" disabled '+demo_foco2+'></td></tr>';
+
     $.getJSON("/person/all", function(data){
-        var htmlTable = ''; // Aux Variable
         $.each(data.personHashMap, function(i,obj){ // For each element in the Hash Map
             var id = obj.id; // Get the ID
             var name = obj.name; // Get the Name
@@ -54,9 +79,9 @@ function getAllPeopleSettings(){
             // Put everything in the aux variable
             htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td>< type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td></tr>';
         });
-
-        $("#peopleTable").html(htmlTable); // Print it on the table
     });
+
+    $("#peopleSettings").html(htmlTable); // Print it on the table
 }
 
 // Get people depending on their ID

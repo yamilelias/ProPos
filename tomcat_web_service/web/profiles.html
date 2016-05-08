@@ -36,9 +36,9 @@
         });
 
         // Get the settings to display on the table when page opens
-        $("#peopleTable").change(function(){
-            getAllPeopleSettings();
-        });
+        window.onload = function(){
+            getAllPeople();
+        }
     </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -70,19 +70,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    View Profiles <small> Information</small> <!-- Here we will get the name of the Active Profile-->
+                    View Profiles <small> Information</small>
                 </h1>
             </div>
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-            <form class="text-right">
-                <input id="listButton" type="button" value="List Profiles" onclick="getAllPeople();" class="btn btn-default" data-toggle="collapse" data-target="#table"/>
-                <div id= "table" class="padding-borders">
-                </div>
-            </form>
-            <br>
         </div>
         <!-- /.row -->
 
@@ -91,21 +81,18 @@
                 <thead>
                 <tr><th>ID</th><th>Name</th><th>Last Name</th></tr>
                 </thead>
-                <tr>
-                    <th>0</th>
-                    <th>Yamil</th>
-                    <th>Elias</th>
-                </tr>
-                <div id="peopleTable"></div>
+                <tbody id="profilesResult">
+                </tbody>
             </table>
         </div>
         <!-- /.row -->
 
+        <!-- Footer -->
+        <footer id="footer"></footer>
     </div>
     <!-- /.container-fluid -->
 
-    <!-- Footer -->
-    <footer id="footer"></footer>
+
 </div>
 <!-- /#page-wrapper -->
 
