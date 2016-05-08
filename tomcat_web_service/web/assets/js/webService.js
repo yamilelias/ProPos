@@ -107,7 +107,10 @@ function getAllPeopleSettings(){
             // Put everything in the aux variable
             htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td>< type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td></tr>';
         });
-    });
+    })
+        .fail(function(){
+            getErrorAlert();
+        });
 
     $("#peopleSettings").html(htmlTable); // Print it on the table
 }
