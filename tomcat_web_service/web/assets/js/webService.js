@@ -6,10 +6,14 @@
  * WEB SERVICES FUNCTIONS
  */
 
+ // Global interfaces
+ url = "/PF/pf";
+
 // Add a Person to the profiles list
 function addPerson() {
+
     //Try to post data
-    $.post( "/person/" + $("#id").val() + "/" + $("#name").val() + "/" + $("#lastName").val(), function() {
+    $.post( url + "/person/" + $("#id").val() + "/" + $("#name").val() + "/" + $("#lastName").val(), function() {
     })
         .done(function(){ // This will spawn a success Message
             return 0; // Return 0 saying there were no errors
@@ -21,8 +25,12 @@ function addPerson() {
 
 // Add a new configuration to certain person
 function addPersonSettings() {
+
+    var num_foco1 = $("#foco1").is(":checked") ? 1 : 0;
+    var num_foco2 = $("#foco2").is(":checked") ? 1 : 0;
+
     //Try to post data
-    $.post( "/person/" + $("#id").val() + "/" + $("#foco1").val() + "/" + $("#foco2").val(), function() {
+    $.post( url + "/person/profile/" + $("#id").val() + "/" + num_foco1 + "/" + num_foco2, function() {
     })
         .done(function(){ // This will spawn a success Message
             return 0; // Return 0 saying there were no errors
@@ -38,7 +46,7 @@ function addModal(){
         var profile = addPerson(); // Add Person data
         var settings = addPersonSettings(); // Add Person Profile
 
-        if(profile!=0|| settings!=0){
+        if((profile!=0 || settings!=0)&&(profile!=null || profile!=null)){
             throw "There was an error creating profile. Try again later.";
         }
         else{
@@ -62,22 +70,21 @@ function getAllPeople(){
     // Put demo in Aux Variable
     htmlTable+= '<tr><td>'+demo_id+'</td>'+'<td>'+demo_name+'</td>'+'<td>'+demo_lastName+'</td></tr>';
 
-    $.getJSON("/person/all", function(data){
-
-        $.each(data.personHashMap, function(i,obj){ // For each element in the Hash Map
-            var id = obj.id; // Get the ID
-            var name = obj.name; // Get the Name
-            var lastName = obj.lastName; // Get the last Name
+    $.getJSON( url +"/person/all", function(data){
+        for (var i = 1; i < 5; i++) {// For each element in the Hash Map
+            var id = data[i].id; // Get the ID
+            var name = data[i].name; // Get the Name
+            var lastName = data[i].lastName; // Get the last Name
 
             // Put everything in the aux variable
             htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td></tr>';
-        });
-    })
-        .fail(function(){
-            getErrorAlert();
-        });
+        }
 
-    $('#profilesResult').html(htmlTable); // Print it on the table
+        $('#profilesResult').html(htmlTable); // Print it on the table
+    })
+    .fail(function(){
+        getErrorAlert();
+    });    
 }
 function getAllPeopleSettings(){
     var htmlTable = ''; // Aux Variable
@@ -96,35 +103,44 @@ function getAllPeopleSettings(){
     // Put demo in Aux Variable
     htmlTable+= '<tr><td>'+demo_id+'</td>'+'<td>'+demo_name+'</td>'+'<td>'+demo_lastName+'</td>'+'<td><input type="checkbox" disabled '+demo_foco1+'></td>'+'<td><input type="checkbox" disabled '+demo_foco2+'></td></tr>';
 
-    $.getJSON("/person/all", function(data){
-        $.each(data.personHashMap, function(i,obj){ // For each element in the Hash Map
-            var id = obj.id; // Get the ID
-            var name = obj.name; // Get the Name
-            var lastName = obj.lastName; // Get the last Name
-            var foco1 = obj.foco1 ? 'checked' : ''; // If foco1 is active then check the checkbox
-            var foco2 = obj.foco2 ? 'checked' : ''; // If foco2 is active then check the checkbox
+    $.getJSON( url +"/person/all", function(data){
+        
+        for (var i = 1; i < 5; i++) {// For each element in the Hash Map
+            var id = data[i].id; // Get the ID
+            var name = data[i].name; // Get the Name
+            var lastName = data[i].lastName; // Get the last Name
+            var foco1 = data[i].profile.foco1 ? 'checked' : ''; // If foco1 is active then check the checkbox
+            var foco2 = data[i].profile.foco2 ? 'checked' : ''; // If foco2 is active then check the checkbox
 
             // Put everything in the aux variable
-            htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td>< type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td></tr>';
-        });
+            htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td><input type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td></tr>';
+        }
+
+        $("#peopleSettings").html(htmlTable); // Print it on the table
     })
         .fail(function(){
             getErrorAlert();
         });
-
-    $("#peopleSettings").html(htmlTable); // Print it on the table
 }
 
 // Get people depending on their ID
 function getPeopleByID(){
-    $.getJSON("/person/" + $("id").val() + "/", function(data){
+    $.getJSON( url +"/person/" + $("id").val() + "/", function(data){
 
     });
 }
 
+// Activate foco1 or foco2
+function activateBulbs(){
+    $.post(url + "/active/" + $("#idTurnOn").val(), function(){
+    });
+
+
+}
+
 // Get people profile depending on their ID
 function getPeopleProfile(){
-    $.getJSON("/person/profile/" + $("id").val()  + "/", function(data){
+    $.getJSON( url + "/person/profile/" + $("id").val()  + "/", function(data){
 
     });
 }

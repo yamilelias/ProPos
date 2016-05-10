@@ -62,7 +62,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Dashboard <small>Statistics Overview</small>
+                    Dashboard <small>Control Panel</small>
                 </h1>
             </div>
         </div>
@@ -104,7 +104,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-lightbulb-o fa-5x"></i>
+                                <i class="fa fa-gear fa-5x"></i>
                             </div>
                             <div class="col-xs-8 text-center btn-lg text-uppercase">
                                 <div class="fa fa-5x"> </div>
@@ -120,6 +120,32 @@
                         </div>
                     </div>
                 </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Lights up panel -->
+        <div class="row">
+            <div class="">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-lightbulb-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-8 text-center btn-lg text-uppercase">
+                                <div class="fa fa-5x"> </div>
+                                <div>Insert ID: <input type="text" id="idTurnOn" class="textField"> <button class="btn btn-default" id="submitLights" type="submit" onclick="activateBulbs();">Submit</button> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <span class="pull-left paint-yellow">Now!</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right paint-yellow"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.row -->

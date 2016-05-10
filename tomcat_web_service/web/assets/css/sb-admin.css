@@ -249,6 +249,13 @@ ul.alert-dropdown {
     color: #47AC47;
 }
 
+.paint-yellow{
+    color: #F7B100;
+}
+
+.textField{
+  color: #000;
+}
 th{
     font-weight: default;
 }
