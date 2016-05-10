@@ -26,8 +26,9 @@ function addPerson() {
 // Add a new configuration to certain person
 function addPersonSettings() {
 
-    var num_foco1 = $("#foco1").is(":checked") ? 1 : 0;
-    var num_foco2 = $("#foco2").is(":checked") ? 1 : 0;
+    // If the checkbox are "checked" or not
+    var num_foco1 = $("#foco1").is(":checked") ? 1 : 0; // TRUE = 1 | FALSE = 0
+    var num_foco2 = $("#foco2").is(":checked") ? 1 : 0; // TRUE = 1 | FALSE = 0
 
     //Try to post data
     $.post( url + "/person/profile/" + $("#id").val() + "/" + num_foco1 + "/" + num_foco2, function() {
@@ -101,7 +102,7 @@ function getAllPeopleSettings(){
     var demo_foco2 = bool_foco2 ? 'checked' : '';
 
     // Put demo in Aux Variable
-    htmlTable+= '<tr><td>'+demo_id+'</td>'+'<td>'+demo_name+'</td>'+'<td>'+demo_lastName+'</td>'+'<td><input type="checkbox" disabled '+demo_foco1+'></td>'+'<td><input type="checkbox" disabled '+demo_foco2+'></td></tr>';
+    htmlTable+= '<tr><td>'+demo_id+'</td>'+'<td>'+demo_name+'</td>'+'<td>'+demo_lastName+'</td>'+'<td><input type="checkbox" disabled '+demo_foco1+'></td>'+'<td><input type="checkbox" disabled '+demo_foco2+'></td><td><button class="btn btn-default btn-sm btn-primary" disabled>Activate</button>  <button class="btn btn-default btn-sm btn-danger" disabled>Disable</button></td></tr>';
 
     $.getJSON( url +"/person/all", function(data){
         
@@ -113,7 +114,7 @@ function getAllPeopleSettings(){
             var foco2 = data[i].profile.foco2 ? 'checked' : ''; // If foco2 is active then check the checkbox
 
             // Put everything in the aux variable
-            htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td><input type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td></tr>';
+            htmlTable+= '<tr><td>'+id+'</td>'+'<td>'+name+'</td>'+'<td>'+lastName+'</td>'+'<td><input type="checkbox" disabled '+foco1+'></td>'+'<td><input type="checkbox" disabled '+foco2+'></td><td><button class="btn btn-default btn-sm btn-primary" disabled>Activate</button>  <button class="btn btn-default btn-sm btn-danger" disabled>Disable</button></td></tr>';
         }
 
         $("#peopleSettings").html(htmlTable); // Print it on the table
