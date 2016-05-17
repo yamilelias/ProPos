@@ -2,14 +2,17 @@
  * Created by Yamil Elías on 07/05/2016.
  */
 
-/**
- * WEB SERVICES FUNCTIONS
- */
 
- // Global interfaces
+//==============================================================
+//      WEB SERVICES FUNCTIONS
+//==============================================================
+
+ // Global variable
  url = "/PF/pf";
 
-// Add a Person to the profiles list
+/**
+ * Add a Person to the profiles list
+ */
 function addPerson() {
 
     //Try to post data
@@ -23,7 +26,9 @@ function addPerson() {
         });
 }
 
-// Add a new configuration to certain person
+/**
+ * Add a new configuration to certain person
+ */
 function addPersonSettings() {
 
     // If the checkbox are "checked" or not
@@ -41,7 +46,9 @@ function addPersonSettings() {
         });
 }
 
-// This function is used by the modal to save all data and display a success alert
+/**
+ * This function is used by the modal to save all data and display a success alert
+ */
 function addModal(){
     try{
         var profile = addPerson(); // Add Person data
@@ -59,7 +66,9 @@ function addModal(){
     }
 }
 
-// Function to get all People
+/**
+ * Function to get all People
+ */
 function getAllPeople(){
     var htmlTable = ''; // Aux Variable
 
@@ -87,6 +96,10 @@ function getAllPeople(){
         getErrorAlert();
     });    
 }
+
+/**
+ * Function to get all People Settings
+ */
 function getAllPeopleSettings(){
     var htmlTable = ''; // Aux Variable
 
@@ -124,14 +137,23 @@ function getAllPeopleSettings(){
         });
 }
 
-// Get people depending on their ID
+//==============================================================
+//      FUNCTIONS THAT AREN'T IMPLEMENTED YET FOR WEB SERVICE
+//==============================================================
+
+/**
+ * Get people depending on their ID
+ */
 function getPeopleByID(){
     $.getJSON( url +"/person/" + $("id").val() + "/", function(data){
 
     });
 }
 
-// Activate foco1 or foco2
+//
+/**
+ * Activate foco1 or foco2
+ */
 function activateBulbs(){
     $.post(url + "/active/" + $("#idTurnOn").val(), function(){
     });
@@ -139,36 +161,48 @@ function activateBulbs(){
 
 }
 
-// Get people profile depending on their ID
+//
+/**
+ * Get people profile depending on their ID
+ */
 function getPeopleProfile(){
     $.getJSON( url + "/person/profile/" + $("id").val()  + "/", function(data){
 
     });
 }
 
-/**
- * OTHER FUNCTIONS
- */
+//==============================================================
+//      OTHER FUNCTIONS
+//==============================================================
 
-// Function to display a Success Alert
+/**
+ * Function to display a Success Alert
+ */
 function successAlert(){
     var alertMessage = '<div id="successAlert" class="alert alert-success alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Congratulations!</strong> You have saved a new profile. </div>';
     $("#alert").html('' + alertMessage + '');
 }
 
-// Function to display an Error Alert in POST
+ /**
+ * Function to display an Error Alert in POST
+ */
 function postErrorAlert(){
     var alertMessage = '<div id="errorAlert" class="alert alert-danger alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Oh oh!</strong> There was an error saving your profile, try again later.</div>';
     $("#alert").html('' + alertMessage + '');
 }
 
-// Function to display an Error Alert in GET
+/**
+ * Function to display an Error Alert in GET
+ */
 function getErrorAlert(){
     var alertMessage = '<div id="errorAlert" class="alert alert-danger alert-dismissible fade in" role=alert><button type=button class=close data-dismiss=alert aria-label=Close> <span aria-hidden=true>&times;</span></button> <strong>Oh oh!</strong> There was an error getting the information from server, try again later.</div>';
     $("#alert").html('' + alertMessage + '');
 }
 
-// Function to display a preview of a photo
+/**
+ * Function to display a preview of a photo - DON'T WORK  YET
+ * @param input From where the image will be taken
+ */
 function readURL(input) {
     if (input.files && input.files[0]) { // If we have an input file
         var reader = new FileReader();
@@ -181,7 +215,9 @@ function readURL(input) {
     }
 }
 
-// Function that will call readURL to display image
+/**
+ * Function that will call readURL to display image - DON'T WORK  YET
+ */
 $("#uploadFile").change(function() {
     readURL(this);
 });
