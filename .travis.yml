@@ -2,5 +2,5 @@ language: java
 
 install: ant -buildfile tomcat_web_service/build.xml
 #test on different JDK
-jdk:
-  - oraclejdk8
+#jdk:
+#  - oraclejdk8
