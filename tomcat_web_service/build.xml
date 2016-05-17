@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Echo2" default="dist" basedir=".">
+<project name="TomcatWebService" default="dist" basedir=".">
   <description>
     Build classes and generate war build file
   </description>
+  <import file="build-impl.xml"/>
   <property name="src" location="src"/>
   <property name="build" location="build"/>
   <property name="dist" location="dist"/>
