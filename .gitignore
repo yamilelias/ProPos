@@ -1,1 +1,8 @@
+#Files
+############
 *.ini
+
+#Directories
+############
+.idea/
+ProPos_raspberry/.idea
